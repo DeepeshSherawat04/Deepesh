@@ -4,7 +4,7 @@ This is the backend for **Lyftr**, built with **FastAPI** and **SQLAlchemy**, co
 
 ## Features
 - FastAPI server with REST API endpoints
-- SQLite/PostgreSQL database support via SQLAlchemy
+- SQLite database support via SQLAlchemy
 - Logging middleware for incoming requests
 - Metrics endpoint for monitoring
 - Dockerized for easy deployment
