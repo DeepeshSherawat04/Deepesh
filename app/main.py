@@ -6,6 +6,7 @@ from sqlalchemy import text
 from app.routes import webhook, messages, stats
 from app.models import init_db
 from app.database import get_db
+from app.middleware.body_cache import BodyCacheMiddleware
 from app.middleware.metrics import MetricsMiddleware, metrics_data
 
 # -------------------------------
@@ -28,6 +29,7 @@ app.include_router(stats.router)
 # -------------------------------
 # Add Metrics Middleware
 # -------------------------------
+app.add_middleware(BodyCacheMiddleware)   # MUST be first
 app.add_middleware(MetricsMiddleware)
 
 # -------------------------------
